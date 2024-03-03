@@ -1,11 +1,12 @@
 import type { DataSource, EntityManager } from 'typeorm';
 import { Logger } from '@nestjs/common';
 
-import type { AbstractLoader } from '@fixtures/abstract-loader';
-import { LOADERS } from '@fixtures/loaders';
 import type { ClassType } from '@models/types';
 
+import type { AbstractLoader } from '@db/fixtures/abstract-loader';
 import AppDataSource from '../../data-source';
+
+import { LOADERS } from '@db/fixtures/loaders';
 
 class FixtureLoader {
   // TODO

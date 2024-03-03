@@ -4,7 +4,7 @@ import { DataSource } from 'typeorm';
 
 import { dbFactory } from '@core/config';
 
-import { MIGRATIONS } from './migrations';
+import { MIGRATIONS } from '@db/migrations';
 
 config();
 

@@ -1,6 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class ApiCountry {
+import {
+  ICountryItemResponse,
+  ICurrencyItemResponse,
+} from '../currency-item-response.interface';
+
+export class ApiCountry implements ICountryItemResponse {
   @ApiProperty({ example: 'bfc7412e-2093-4b09-952d-42edc56e7776' })
   id: string;
 
@@ -11,7 +16,7 @@ export class ApiCountry {
   name: string;
 }
 
-export class ApiGetAllCurrenciesResponseSwagger {
+export class ApiCurrencyItemResponse implements ICurrencyItemResponse {
   @ApiProperty({ example: 'bfc7412e-2093-4b09-952d-42edc56e7776' })
   id: string;
 

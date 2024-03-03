@@ -9,9 +9,10 @@ import {
 import { ApiBody, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import {
-  ApiResponseGetAllCountriesSwagger,
-  ApiUpdateCountrySwagger,
-  UpdateCountryDto,
+  ApiCountryItemResponse,
+  ApiUpdateCountry,
+  CountryUpdateBodyDto,
+  ICountryItemResponse,
 } from '../models';
 import { CountryService } from '../services';
 
@@ -21,18 +22,18 @@ export class CountryController {
   constructor(private readonly countryService: CountryService) {}
 
   @Get()
-  @ApiResponse({ type: () => ApiResponseGetAllCountriesSwagger, isArray: true })
-  getAll(): Promise<ApiResponseGetAllCountriesSwagger[]> {
+  @ApiResponse({ type: () => ApiCountryItemResponse, isArray: true })
+  getAll(): Promise<ICountryItemResponse[]> {
     return this.countryService.getAll();
   }
 
   @Patch(':id')
-  @ApiBody({ type: () => ApiUpdateCountrySwagger })
+  @ApiBody({ type: () => ApiUpdateCountry })
   @ApiParam({ name: 'id', type: String, description: 'UUID' })
   async updateCountry(
     @Param('id', ParseUUIDPipe) id: string,
-    @Body() dto: UpdateCountryDto,
-  ) {
+    @Body() dto: CountryUpdateBodyDto,
+  ): Promise<void> {
     await this.countryService.updateCountry(id, dto);
   }
 }

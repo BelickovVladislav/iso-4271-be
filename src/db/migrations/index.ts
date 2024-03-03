@@ -1,7 +1,9 @@
 import { readdirSync } from 'fs';
 import { join } from 'path';
 
-const dir = './migrations';
+import { resolve } from 'app-root-path';
+
+const dir = join(resolve('src/db/migrations'));
 
 export const MIGRATIONS = readdirSync(dir).reduce((acc, path) => {
   if (path !== 'index.ts') {

@@ -1,7 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
-import { ApiGetAllCurrenciesResponseSwagger } from '../models';
+import { ApiCurrencyItemResponse, ICurrencyItemResponse } from '../models';
 import { CurrencyService } from '../services';
 
 @Controller('currency')
@@ -11,10 +11,10 @@ export class CurrencyController {
 
   @Get()
   @ApiResponse({
-    type: () => ApiGetAllCurrenciesResponseSwagger,
+    type: () => ApiCurrencyItemResponse,
     isArray: true,
   })
-  getAll(): Promise<ApiGetAllCurrenciesResponseSwagger[]> {
+  getAll(): Promise<ICurrencyItemResponse[]> {
     return this.currencyService.getAll();
   }
 }

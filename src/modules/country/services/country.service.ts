@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 
 import { CountryEntity } from '@entities/country';
 
-import { ApiResponseGetAllCountriesSwagger, UpdateCountryDto } from '../models';
+import { ICountryItemResponse, ICountryUpdateBody } from '../models';
 
 @Injectable()
 export class CountryService {
@@ -13,14 +13,14 @@ export class CountryService {
     private readonly countryRepository: Repository<CountryEntity>,
   ) {}
 
-  getAll(): Promise<ApiResponseGetAllCountriesSwagger[]> {
+  getAll(): Promise<ICountryItemResponse[]> {
     return this.countryRepository.find({
       relations: ['currencies'],
       order: { name: 'ASC', currencies: { name: 'ASC' } },
     });
   }
 
-  updateCountry(id: string, dto: UpdateCountryDto) {
-    return this.countryRepository.update(id, dto);
+  async updateCountry(id: string, dto: ICountryUpdateBody): Promise<void> {
+    await this.countryRepository.update(id, dto);
   }
 }

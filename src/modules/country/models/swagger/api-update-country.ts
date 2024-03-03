@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class ApiUpdateCountrySwagger {
+export class ApiUpdateCountry {
   @ApiProperty({ type: Boolean })
   isActive: boolean;
 }

@@ -3,9 +3,9 @@ import { DeepPartial } from 'typeorm';
 
 import { CountryEntity } from '@entities/country';
 import { CurrencyEntity } from '@entities/currency';
-import { AbstractLoader, IRelationsOptions } from '@fixtures/abstract-loader';
 import { EnvironmentType } from '@models/enums';
 
+import { AbstractLoader, IRelationsOptions } from '../abstract-loader';
 import { COUNTRIES } from '../data/countries';
 
 export class CountriesLoader extends AbstractLoader<CountryEntity> {

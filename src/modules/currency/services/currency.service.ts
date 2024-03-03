@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 
 import { CurrencyEntity } from '@entities/currency';
 
-import { ApiGetAllCurrenciesResponseSwagger } from '../models';
+import { ICurrencyItemResponse } from '../models';
 
 @Injectable()
 export class CurrencyService {
@@ -13,7 +13,7 @@ export class CurrencyService {
     private readonly currencyRepository: Repository<CurrencyEntity>,
   ) {}
 
-  getAll(): Promise<ApiGetAllCurrenciesResponseSwagger[]> {
+  getAll(): Promise<ICurrencyItemResponse[]> {
     return this.currencyRepository.find({
       relations: ['countries'],
       order: { code: 'ASC', countries: { name: 'ASC' } },

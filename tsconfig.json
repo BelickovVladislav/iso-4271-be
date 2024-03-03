@@ -30,8 +30,8 @@
       "@modules/*": [
         "src/modules/*"
       ],
-      "@fixtures/*": [
-        "fixtures/*"
+      "@db/*": [
+        "src/db/*"
       ]
     }
   }

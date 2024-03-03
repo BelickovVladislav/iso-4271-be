@@ -1,4 +1,6 @@
-export * from './api-response-get-all-countries.swagger';
-export * from './api-update-country.swagger';
+export * from './swagger';
 
-export * from './update-country.dto';
+export * from './dtos';
+
+export * from './country-item-response.interface';
+export * from './country-update-body.interface';
