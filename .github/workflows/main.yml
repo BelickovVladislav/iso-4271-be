@@ -11,4 +11,5 @@ jobs:
         registry: ghcr.io
         name: ghcr.io/BelickovVladislav/iso-4271-be/iso-4271-be 
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }} 
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        tags: "build"
