@@ -21,9 +21,6 @@
       "@core/*": [
         "src/core/*"
       ],
-      "@entities/*": [
-        "src/entities/*"
-      ],
       "@models/*": [
         "src/models/*"
       ],

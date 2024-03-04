@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 
-import { CountryEntity } from '@entities/country';
+import { CountryEntity } from '@db/entities/country';
 
 @Entity('currencies')
 export class CurrencyEntity {

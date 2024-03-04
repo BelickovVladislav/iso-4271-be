@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { CurrencyEntity } from '@entities/currency';
+import { CurrencyEntity } from '@db/entities/currency';
 
 import { ICurrencyItemResponse } from '../models';
 

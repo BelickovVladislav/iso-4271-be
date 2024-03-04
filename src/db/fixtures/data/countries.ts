@@ -1,6 +1,6 @@
 import { DeepPartial } from 'typeorm';
 
-import { CountryEntity } from '@entities/country';
+import { CountryEntity } from '@db/entities/country';
 
 export const COUNTRIES: DeepPartial<CountryEntity>[] = [
   {

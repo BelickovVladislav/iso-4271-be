@@ -34,8 +34,8 @@ module.exports = {
           // Internal packages.
           [
             // Import type
-            "^(@core|@entities|@models|@modules|@fixtures)(/.*\\u0000|.*\\u0000$)",
-            "^(@core|@entities|@models|@modules|@fixtures)(/.*|$)"
+            "^(@core|@db|@models|@modules|@fixtures)(/.*\\u0000|.*\\u0000$)",
+            "^(@core|@db|@models|@modules|@fixtures)(/.*|$)"
           ],
           [
             // Import type

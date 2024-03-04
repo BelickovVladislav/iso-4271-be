@@ -1,6 +1,6 @@
 import { DeepPartial } from 'typeorm';
 
-import { CurrencyEntity } from '@entities/currency';
+import { CurrencyEntity } from '@db/entities/currency';
 
 export const CURRENCIES: DeepPartial<CurrencyEntity>[] = [
   {

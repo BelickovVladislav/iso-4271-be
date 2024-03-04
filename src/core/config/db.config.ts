@@ -1,7 +1,7 @@
 import { ConfigService } from '@nestjs/config';
 import { DataSourceOptions } from 'typeorm';
 
-import { ENTITIES } from '../../entities';
+import { ENTITIES } from '../../db/entities';
 
 export const dbFactory = (configService: ConfigService): DataSourceOptions => {
   return {

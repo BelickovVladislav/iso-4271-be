@@ -1,8 +1,8 @@
 import { Type } from '@nestjs/common';
 import { DeepPartial } from 'typeorm';
 
-import { CountryEntity } from '@entities/country';
-import { CurrencyEntity } from '@entities/currency';
+import { CountryEntity } from '@db/entities/country';
+import { CurrencyEntity } from '@db/entities/currency';
 import { EnvironmentType } from '@models/enums';
 
 import { AbstractLoader, IRelationsOptions } from '../abstract-loader';

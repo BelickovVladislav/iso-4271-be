@@ -3,14 +3,12 @@ import { Logger } from '@nestjs/common';
 
 import type { ClassType } from '@models/types';
 
-import type { AbstractLoader } from '@db/fixtures/abstract-loader';
-import AppDataSource from '../../data-source';
-
-import { LOADERS } from '@db/fixtures/loaders';
+import type { AbstractLoader } from '../fixtures/abstract-loader';
+import AppDataSource from '../data-source';
+import { LOADERS } from '../fixtures/loaders';
 
 class FixtureLoader {
-  // TODO
-  readonly #loaders: ClassType<AbstractLoader<object>>[] = LOADERS as [];
+  readonly #loaders: ClassType<AbstractLoader<object>>[] = LOADERS;
 
   readonly #logger: Logger = new Logger(FixtureLoader.name);
 
